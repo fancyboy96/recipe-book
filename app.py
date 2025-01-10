@@ -1,6 +1,7 @@
 from flask import flask
 
 app = Flask(__name__)
+app.config("SQLALCHEMY_DATABASE_URI") = "sqlite:///recipe.db"
 
 class Recipe(db.Model):
     __tablename__ = 'recipe'
@@ -37,7 +38,13 @@ class Step(db.Model):
 
     def __repr__(self):
         return f"<Step {self.id}: {self.name}>"
- 
+
+@app.route("/", methods = "POST", "GET")
+def index():
+    if request.method == "POST":
+        return "TODO"
+    else:
+        return render_template("index.html")
 
 if __name__ == "__main__":
     with app.app_context():
