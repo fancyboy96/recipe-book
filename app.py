@@ -1,7 +1,11 @@
-from flask import flask
+from flask import Flask, request, render_template
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
-app.config("SQLALCHEMY_DATABASE_URI") = "sqlite:///recipe.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///recipe.db"
+db = SQLAlchemy(app)
+
 
 class Recipe(db.Model):
     __tablename__ = 'recipe'
@@ -21,7 +25,7 @@ class Ingredient(db.Model):
     recipe_id = db.Column(db.Integer, db.ForeignKey('recipe.id'), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     quantity = db.Column(db.Float, nullable=False)
-    unit = db.Column(db.String(200), nullablse=False)
+    unit = db.Column(db.String(200), nullable=False)
 
     recipe = db.relationship('Recipe', back_populates='ingredients')
 
@@ -39,7 +43,7 @@ class Step(db.Model):
     def __repr__(self):
         return f"<Step {self.id}: {self.name}>"
 
-@app.route("/", methods = "POST", "GET")
+@app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
         return "TODO"
