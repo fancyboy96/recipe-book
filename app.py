@@ -43,7 +43,7 @@ class Step(db.Model):
     def __repr__(self):
         return f"<Step {self.id}: {self.name}>"
 
-@app.route("/", methods = ["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
         return "TODO"
