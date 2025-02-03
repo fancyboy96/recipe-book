@@ -2,5 +2,17 @@
 
 {% block title %}TODO Add New Recipe{% endblock %}
 
-{% block main%}
+{% block main %}
+<form action="/new" method="post">
+    <input type="text" placeholder="Title">
+    <br>
+    <input type="text" placeholder="Description">
+    <br>
+    <a href="/new-ingredient">Add ingredient</a>
+</form>
+
+{% block ingredient %}
+{% endblock %}
+
+<a href="/">Cancel</a>
 {% endblock %}

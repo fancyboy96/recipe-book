@@ -50,6 +50,20 @@ def index():
     else:
         return render_template("index.html")
 
+@app.route("/new", methods=["POST", "GET"])
+def new_recipe():
+    if request.method == "POST":
+        return TODO
+    else:
+        return render_template("new-recipe.html")
+
+@app.route("/new-ingredient", methods=["POST", "GET"])
+def new_ingreient():
+    if request.method == "POST":
+        return TODO
+    else:
+        return render_template("new-ingredient.html")
+
 if __name__ == "__main__":
     with app.app_context():
         db.drop_all()
