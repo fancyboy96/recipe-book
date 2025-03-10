@@ -2,7 +2,6 @@ from datetime import datetime
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
-
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///recipe.db"
 db = SQLAlchemy(app)
@@ -58,7 +57,7 @@ def new_recipe():
         return render_template("new-recipe.html")
 
 @app.route("/new-ingredient", methods=["POST", "GET"])
-def new_ingreient():
+def new_ingredient():
     if request.method == "POST":
         return TODO
     else:
