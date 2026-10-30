@@ -1,6 +1,6 @@
-# Belle's Recipe Book
+# Recipes
 
-A small static website for my girlfriend's recipe book.
+A static recipe book website.
 
 ## Running locally
 
@@ -16,17 +16,13 @@ Then visit <http://localhost:8000>.
 
 ## Adding a recipe
 
-All recipes live directly in `index.html`, inside the `.recipe-list` section.
+Recipes live in their own pages under `recipes/<recipe-name>/index.html`.
 
-Each recipe is a `<details>` card:
+1. Create a new folder like `recipes/my-new-recipe/`.
+2. Copy an existing recipe page as a template.
+3. Update the title, recipe name, date, ingredients, and steps.
 
-1. Copy an existing `<article class="recipe-card">` block.
-2. Update the card's `id`.
-3. Change the recipe name, description, and date.
-4. Add ingredient lines using the quantity/unit spans, e.g.
-   `<span class="ingredient-quantity">2</span> <span class="ingredient-unit">cups</span> sugar`.
-5. Add direction lines using the step number span, e.g.
-   `<span class="step-number">1</span> Preheat the oven to 350°F.`
+The homepage (`index.html`) has a table of recipes — add a row with the recipe name linking to its page and its date.
 
 ## Deploying
 

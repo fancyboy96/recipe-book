@@ -1,9 +1,9 @@
 :root {
-    --bg: #f2f2f0;
+    --bg: #ffffff;
     --surface: #ffffff;
     --ink: #111111;
     --muted: #555555;
-    --accent: #e60000;
+    --accent: #111111;
     --border: 2px solid #111111;
     --shadow: 8px 8px 0 #111111;
 }
@@ -116,8 +116,7 @@ h1, h2, h3, h4 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--accent);
-    text-decoration: none;
+    color: var(--ink);
 }
 
 .recipe-date {
@@ -126,7 +125,7 @@ h1, h2, h3, h4 {
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--ink);
 }
 
 .recipe-name {
